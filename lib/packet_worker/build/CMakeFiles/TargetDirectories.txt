@@ -1,0 +1,4 @@
+/Users/lake/Projects/flutter_pcap_test/lib/packet_worker/build/CMakeFiles/packet_worker.dir
+/Users/lake/Projects/flutter_pcap_test/lib/packet_worker/build/CMakeFiles/capture.dir
+/Users/lake/Projects/flutter_pcap_test/lib/packet_worker/build/CMakeFiles/edit_cache.dir
+/Users/lake/Projects/flutter_pcap_test/lib/packet_worker/build/CMakeFiles/rebuild_cache.dir

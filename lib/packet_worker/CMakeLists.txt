@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(packet_worker VERSION 1.0.0 LANGUAGES C)
+add_library(packet_worker SHARED capture.c packet_worker.def)
+add_executable(capture capture.c)
+target_link_libraries(packet_worker pcap)
+target_link_libraries(capture pcap)
