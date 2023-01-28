@@ -5,6 +5,7 @@ A project of pcap capture using Flutter & libpcap.
 ## Compile
 ### Compile Flutter
 flutter build macos
+
 ### Compile C lib
 cd lib/packet_worker/build
 cmake .. && make
@@ -12,4 +13,5 @@ cmake .. && make
 
 ## Run
 cd build/macos/Build/Products/Release/flutter_pcap_test.app/Contents/MacOS
+
 sudo ./flutter_pcap_test
