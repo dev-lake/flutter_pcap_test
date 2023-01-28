@@ -1,3 +1,5 @@
 LIBRARY packer_worker
 EXPORTS
     run_capture
+    stop_capture
+    set_dart_port

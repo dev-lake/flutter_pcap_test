@@ -1,16 +1,15 @@
 # flutter_pcap_test
 
-A new Flutter project.
+A project of pcap capture using Flutter & libpcap.
 
-## Getting Started
+## Compile
+### Compile Flutter
+flutter build macos
+### Compile C lib
+cd lib/packet_worker/build
+cmake .. && make
+复制 libpacket_worker.dylib 到 build/macos/Build/Products/Release/flutter_pcap_test.app/Contents/MacOS
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run
+cd build/macos/Build/Products/Release/flutter_pcap_test.app/Contents/MacOS
+sudo ./flutter_pcap_test

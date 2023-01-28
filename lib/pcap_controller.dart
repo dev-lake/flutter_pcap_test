@@ -1,19 +1,27 @@
 
 import 'dart:core';
+import 'dart:async';
+import 'dart:isolate';
 import 'package:flutter/material.dart';
 import 'dart:ffi' as ffi;
 import 'libpcap/libpcap_bindings.dart';
 import 'dart:io' show Directory, Platform, sleep;
 import 'package:ffi/ffi.dart';
+import 'package:short_uuids/short_uuids.dart';
 
+const uuid = ShortUuid();
 
 class PcapController {
   pcap_if_t? curDev;  // Current selected device
   bool started = false;  // started or not
+  late Isolate worker;
   late final LibPcap libpcap;  // pcaplib
   List<pcap_if_t> devices = [];  // device list
   bool devfreshing = false;
   String? outfile;
+  int pktCount = 0;
+  int pktTotalSize = 0;
+  List<Map> packetsInfo = []; // [{index: 1, proto: tcp, src: ip, dst: ip, caplen: 100}]
 
   PcapController() {
     // load libpcap
@@ -42,6 +50,15 @@ class PcapController {
     return devices;
   }
 
+  void addPktInfo(String proto, String src, String dst, int capLen) {
+    packetsInfo.add({
+      'index': uuid.generate(),
+      'proto': proto,
+      'src': src,
+      'dst': dst,
+      'caplen': capLen
+    });
+  }
 
   // String get devNet {
   //   var errbuf = calloc.allocate<ffi.Char>(PCAP_ERRBUF_SIZE);

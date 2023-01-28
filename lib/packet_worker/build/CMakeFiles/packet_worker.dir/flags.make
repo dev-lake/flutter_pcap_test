@@ -4,7 +4,7 @@
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 C_DEFINES = -Dpacket_worker_EXPORTS
 
-C_INCLUDES = 
+C_INCLUDES = -I/Users/lake/Projects/flutter_pcap_test/lib/packet_worker/include
 
 C_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fPIC
 

@@ -5548,6 +5548,7 @@ class LibPcap {
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<u_char>, ffi.Pointer<pcap_pkthdr>,
               ffi.Pointer<u_char>)>>('pcap_dump');
+  late final pcap_dumpPtr = _pcap_dumpPtr;
   late final _pcap_dump = _pcap_dumpPtr.asFunction<
       void Function(ffi.Pointer<u_char>, ffi.Pointer<pcap_pkthdr>,
           ffi.Pointer<u_char>)>();

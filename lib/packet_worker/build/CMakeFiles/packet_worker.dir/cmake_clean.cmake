@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/packet_worker.dir/capture.c.o"
   "CMakeFiles/packet_worker.dir/capture.c.o.d"
+  "CMakeFiles/packet_worker.dir/include/dart_api_dl.c.o"
+  "CMakeFiles/packet_worker.dir/include/dart_api_dl.c.o.d"
   "libpacket_worker.dylib"
   "libpacket_worker.pdb"
 )
